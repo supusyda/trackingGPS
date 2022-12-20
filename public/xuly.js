@@ -1,6 +1,6 @@
-// var socket = io("https://demotracking.herokuapp.com");
+var socket = io("https://trackinggps.onrender.com/");
 
-var socket = io("http://localhost:3000/"); //liên kết với sever
+// var socket = io("http://localhost:3000/"); //liên kết với sever
 var socketid = "";
 socket.on("sever-connect", function (clientid) {
   socketid = clientid;
@@ -64,7 +64,7 @@ $(document).ready(function () {
       });
       console.log(markers);
     }
-    $("#submit").click(function async () {
+    $("#submit").click(function async() {
       navigator.geolocation.getCurrentPosition(async function (position) {
         const username = $("#username").val();
         const latitude = position.coords.latitude;
@@ -80,7 +80,7 @@ $(document).ready(function () {
           body: JSON.stringify(data),
         };
 
-       await draw(options);
+        await draw(options);
         $("#content").show();
         $("#userInput").hide();
         mymap.setView(
@@ -116,10 +116,7 @@ socket.on("close", function (data) {
       return e.user;
     })
     .indexOf(data);
-  console.log("chua xoa" + markers[dele].user);
-
   const removed = markers.splice(dele);
   console.log("xoa thg nay" + removed[0].user);
-
   mymap.removeLayer(removed[0].mark);
 });
