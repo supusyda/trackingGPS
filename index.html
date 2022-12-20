@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://demotracking.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="xuly.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+        #mapIss {
+            height: 580px;
+        }
+    </style>
+    <title>Tracking....</title>
+</head>
+
+<body>
+    <div id="content">
+        <div id="mapIss"></div>
+        <div id="show">
+            <div class="show_item">
+                <span>Latitude:</span> <input id="lat" readonly></input>
+            </div>
+            <div class="show_item">
+                <span>Longitude:</span> <input id="lon" readonly></input>
+            </div>
+        </div>
+    </div>
+    <center>
+        <div id="userInput">
+            <div class="khung">
+                <div class="form-group">
+                    <p style="margin-bottom: 20 px;">Enter username to get your location</p>
+                    <input type="text" id="username" required class="form-control" placeholder="Enter username">
+                    <button class="btn btn-primary" style="width:100%;margin-top: 20px;" id="submit">submit</button>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
